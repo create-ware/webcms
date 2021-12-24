@@ -1,0 +1,15 @@
+version: '2'
+services:
+  webcms-base:
+    image: node:lts
+    volumes:
+      - ../../:/webcms/
+    working_dir: /webcms/
+  webcms-install:
+    extends:
+      service: webcms-base
+    command: npm run dashboard-production
+  webcms-finish:
+    extends:
+      service: webcms-base
+    command: exit

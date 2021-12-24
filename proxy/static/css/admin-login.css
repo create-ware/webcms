@@ -1,0 +1,377 @@
+:root {
+  --main-body-bg-color: #f9f9f9;
+  --main-box-bg-color: #ffffff;
+  --main-box-bg-opace-color: #ffffff;
+  --main-text-color: #616161;
+  --main-secondary-text-color: #686868;
+  --main-border-color: #cccccc;
+  --main-accent-color: #124a6e;
+  --main-active-color: #124a6e1c;
+  --main-hover-color: #aaaaaa20;
+  --main-font-size: 14px;
+  --main-table-bg-row: #cccccc20;
+  --main-secundary-font-size: 12px;
+  --main-accent-font-size: 14px;
+  --main-checkbox-border: 2px solid #686868;
+  --main-checkbox-border-hover: 2px solid #124a6e;
+  --main-box-shadow: 0 7px 14px 0 rgb(60 66 87 / 10%), 0 3px 6px 0 rgb(0 0 0 / 10%);
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  background-color: var(--main-body-bg-color);
+  font-family: 'Nunito', 'sans-serif';
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+textarea,
+button,
+a {
+    font-family: Nunito,sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+}
+
+h1 {
+  color: var(--main-text-color);
+  display: block;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  padding: 20px 0 19px 0;
+}
+
+h2 {
+  color: var(--main-text-color);
+  display: block;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  margin-bottom: 15px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.login-form-wrapper {
+  align-self: center;
+  background-color: var(--main-active-color);
+  border-radius: 20px;
+  box-shadow: var(--main-box-shadow);
+  margin: 20px;
+  overflow: hidden;
+  padding: 10px;
+  position: relative;
+  width: 400px;
+  z-index: 1;
+}
+
+.login-form-wrapper form {
+  width: 100%;
+}
+
+
+.input-text {
+  display: flex;
+  margin-bottom: 35px;
+  position: relative;
+  width: 100%;
+}
+
+.input-text label {
+  background-color: var(--main-box-bg-color);
+  color: var(--main-text-color);
+  font-size: var(--main-font-size);
+  font-weight: 600;
+  left: 6px;
+  pointer-events: none;
+  position: absolute;
+  top: 10px;
+  transition-duration: 50ms;
+  padding: 0 4px;
+}
+
+.input-text input {
+  background: transparent;
+  border-radius: 20px;
+  border: 1px solid var(--main-border-color);
+  caret-color: var(--main-accent-color);
+  color: var(--main-text-color);
+  font-size: var(--main-font-size);
+  font-weight: 600;
+  margin: 0;
+  outline: none;
+  padding: 8px;
+  transition-duration: 50ms;
+  width: 100%;
+}
+
+.input-text input:focus {
+  border: 1px solid var(--main-accent-color);
+  outline: none;
+}
+
+.input-text input.no-empty ~ label {
+  font-size: var(--main-font-size);
+  top: -10px;
+}
+
+.input-text input.active ~ label {
+  color: var(--main-accent-color);
+  font-size: calc(var(--main-font-size) - 2px);
+  top: -10px;
+}
+
+.login-form-wrapper form button {
+  -webkit-user-select: none;
+  align-self: center;
+  background: transparent;
+  border-radius: 20px;
+  border: none;
+  color: var(--main-text-color);
+  cursor: pointer;
+  display: flex;
+  font-size: var(--main-font-size);
+  font-weight: 600;
+  margin: 10px auto;
+  outline: none;
+  padding: 7px 20px;
+  position: relative;
+  text-transform: capitalize;
+  user-select: none;
+}
+
+.login-form-wrapper form button:hover {
+  background-color: var(--main-hover-color);
+}
+
+.login-form-wrapper form button:active {
+  background-color: var(--main-active-color);
+  color: var(--main-accent-color);
+}
+
+#error-msg {
+  color: red;
+  font-size: var(--main-font-size);
+  margin: 10px 0;
+  text-align: center;
+}
+
+.hint {
+  color: var(--main-secondary-text-color);
+  font-size: var(--main-secundary-font-size);
+  font-weight: 500;
+  position: absolute;
+  top: 40px;
+  left: 10px;
+}
+
+#description {
+  color: var(--main-text-color);
+  font-size: 14px;
+  margin-bottom: 0 0 15px 0;
+  text-align: center;
+}
+
+#success-msg {
+  color: #4caf50;
+  font-size: var(--main-font-size);
+  margin: 10px 0;
+  text-align: center;
+}
+
+#app-logo {
+  display: flex;
+  height: 64px;
+  margin: 10px auto;
+}
+
+@media screen and (max-width: 480px) {
+  .login-form-wrapper {
+    width: calc(100% - 40px);
+  }
+}
+
+#header {
+  display: flex;
+  margin: 50px auto;
+  width: 100%;
+}
+
+#host-logo {
+  height: 32px;
+  margin: auto;
+  width: 104px;
+}
+
+#footer {
+  -webkit-user-select: none;
+  color: var(--main-text-color);
+  display: flex;
+  justify-content: center;
+  left: 0;
+  margin: 50px auto;
+  padding: 5px 0;
+  right: 0;
+  user-select: none;
+  z-index: 1;
+}
+
+#footer span {
+  align-self: center;
+  display: flex;
+  font-size: 10px;
+  margin: auto 5px auto 5px;
+}
+
+#footer a {
+  outline: none;
+}
+
+#footer img {
+  display: flex;
+  position: relative;
+  top: 0;
+  width: 150px;
+}
+
+#footer span {
+  align-self: center;
+  display: flex;
+  font-size: 10px;
+  margin: auto 5px auto 5px;
+}
+
+
+#links-wrapper {
+  display: flex;
+  margin: 10px 0 0 0;
+}
+
+a {
+  color: var(--main-text-color);
+  display: flex;
+  flex-grow: 1;
+  font-size: var(--main-secundary-font-size);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--main-accent-color);
+}
+
+#links-wrapper a:last-child {
+  justify-content: flex-end;
+}
+
+#content-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.login-form-wrapper:after {
+  background-color: var(--main-box-bg-color);
+  border-radius: 100%;
+  content: "";
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.login-form:after {
+  height: 700px;
+  width: 768px;
+}
+
+.register-form:after {
+  height: 1180px;
+  width: 820px;
+}
+
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+  font: inherit;
+  color: var(--main-accent-color);
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--main-text-color);
+  border-radius: 100%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  box-shadow: inset 1em 1em var(--main-accent-color);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:checked {
+  border: 2px solid var(--main-accent-color);
+}
+
+input[type="radio"]:focus {
+  outline-offset: max(2px, 0.15em);
+}
+
+
+#inline {
+  display: grid;
+  grid-column-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+}
+
+.input-radio {
+  display: flex;
+  padding: 5px 0;
+}
+
+.input-radio label {
+  color: var(--main-text-color);
+  font-size: var(--main-font-size);
+  font-weight: 600;
+  margin-left: 10px;
+  pointer-events: none;
+  text-transform: capitalize;
+}
+
+
+.error {
+  color: red;
+  font-size: var(--main-secundary-font-size);
+  font-weight: 500;
+  position: absolute;
+  top: 40px;
+  left: 10px;
+}

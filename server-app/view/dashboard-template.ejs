@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <meta charset="utf-8">
+        <meta
+          name="theme-color"
+          content="#f9f9f9">
+        <meta name="msapplication-TileColor" content="#f9f9f9">
+        <meta name="msapplication-TileImage" content="/static/assets/ms-icon-144x144.png">
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+          rel="stylesheet">
+    </head>
+    <body>
+        <style>
+            html,
+            body {
+              min-width: 100% !important;
+              max-width: 100% !important;
+            }
+            html {
+              box-sizing: border-box;
+              height: 100%;
+              overflow: hidden;
+            }
+            body {
+              background-color: #f9f9f9;
+              box-sizing: border-box;
+              font-family: 'Nunito', sans-serif;
+              height: 100%;
+              margin: 0;
+              overflow: hidden;
+            }
+            input,
+            textarea,
+            button,
+            a {
+              font-family: Nunito,sans-serif;
+            }
+            a,
+            textarea,
+            input[type=text]:focus {
+              outline: none !important;
+              outline-offset: 0 !important;
+              transition-duration: 0ms !important;
+            }
+            ::selection {
+              background: var(--main-accent-color);
+              color: white;
+            }
+            ::-moz-selection {
+              background: var(--main-accent-color);
+              color: white;
+            }
+        </style>
+        <div id="app"></div>
+        <div id="footer">
+          <span>Development by</span>
+          <div
+            class="github-widget"
+            data-github="eduardobc88">
+          </div>
+          <span>1.0.0</span>
+        </div>
+        <script
+          defer
+          src="https://cdn.socket.io/4.1.1/socket.io.min.js"
+          crossorigin="anonymous">
+        </script>
+        <script
+          defer
+          src="/static/js/github-widget.js">
+        </script>
+        <style>
+        #footer {
+          -webkit-user-select: none;
+          color: var(--main-text-color);
+          display: flex;
+          justify-content: center;
+          left: 0;
+          margin: auto;
+          position: absolute;
+          right: 0;
+          user-select: none;
+          z-index: 1;
+          padding: 0;
+          bottom: 0;
+          display: none;
+        }
+        #footer span {
+          align-self: center;
+          display: flex;
+          font-size: 10px;
+          margin: auto 5px auto 5px;
+        }
+        </style>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+version: '3.7'
+services:
+  webcms-nginx-service:
+    image: nginx:latest
+    restart: always
+    hostname: webcms-nginx-service
+    container_name: webcms-nginx-service
+    networks:
+      - webcms-work-network
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ../../:/webcms/
+    working_dir: /webcms/
+    volumes:
+      - ../../:/webcms/
+      - ../../proxy/development/nginx.conf:/etc/nginx/nginx.conf
+    working_dir: /webcms/
+    env_file:
+      - webcms-environment-vars.env
+    depends_on:
+      - webcms-app-service
+    command: [nginx-debug, '-g', 'daemon off;']
+    tty: true
+  webcms-app-service:
+    image: node:lts
+    restart: "no"
+    hostname: webcms-app-service
+    container_name: webcms-app-service
+    networks:
+      - webcms-work-network
+    volumes:
+      - ../../:/webcms/
+    working_dir: /webcms/
+    env_file:
+      - webcms-environment-vars.env
+    command: npm run server-development
+    depends_on:
+      - webcms-mariadb-service
+    tty: true
+  webcms-dashboard-app:
+    image: node:lts
+    container_name: webcms-dashboard-app
+    volumes:
+      - ../../:/webcms/
+    working_dir: /webcms/
+    command: npm run dashboard-development
+    tty: true
+  webcms-mariadb-service:
+    image: mariadb
+    hostname: webcms-mariadb-service
+    container_name: webcms-mariadb-service
+    networks:
+      - webcms-work-network
+    ports:
+      - "3306:3306"
+    volumes:
+      - ../../:/webcms/
+      - ../../database/mysql/:/var/lib/mysql/
+    working_dir: /webcms/fixtures/
+    environment:
+      MYSQL_ROOT_PASSWORD: webcms2019
+      MYSQL_DATABASE: webcms
+    env_file:
+      - webcms-environment-vars.env
+    tty: true
+networks:
+  webcms-work-network:
+    name: webcms-work-network
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.3.0/24

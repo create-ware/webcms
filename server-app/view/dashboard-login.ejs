@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <title>
+      <%= title %>
+    </title>
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1">
+    <meta
+      name="theme-color"
+      content="#f9f9f9">
+    <meta name="msapplication-TileColor" content="#f9f9f9">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+    <link
+      href="/static/css/admin-login.css"
+      rel="stylesheet">
+  </head>
+  <body>
+    <div id="header">
+    </div>
+    <div class="wrapper">
+      <div class="login-form-wrapper login-form">
+        <div id="content-wrapper">
+          <img
+            id="app-logo"
+            src="/static/assets/webcms-logo.png"/>
+          <h1>Start</h1>
+          <% if (error_message != '') { %>
+            <p id="error-msg">
+              <%= error_message %>
+            </p>
+          <% } %>
+          <form
+            id="login-form"
+            action="/"
+            method="POST"
+            autocomplete="off">
+            <input
+              type="hidden"
+              name="_csrf"
+              value="<%- csrfToken -%>"/>
+            <div class="input-text">
+              <input
+                id="user_name"
+                type="text"
+                name="user_name"
+                autocomplete="off"
+                onfocus="onInputFocus(this)"
+                onfocusout="onInputFocus(this)"/>
+              <label>Usuario</label>
+              <span id="user_name_hint" class="hint">Tu nombre de usuario</span>
+              <span id="user_name_error" class="error"></span>
+            </div>
+            <div class="input-text">
+              <input
+                id="user_pass"
+                class="input-text"
+                type="password"
+                name="user_pass"
+                autocomplete="off"
+                onfocus="onInputFocus(this)"
+                onfocusout="onInputFocus(this)"/>
+                <label>Contraseña</label>
+                <span id="user_pass_hint" class="hint">Tu contraseña</span>
+                <span id="user_pass_error" class="error"></span>
+            </div>
+            <button
+              class="button"
+              type="submit">
+              inicio
+            </button>
+            <div id="links-wrapper">
+              <a href="#">
+                Recover account
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="footer">
+      <span>
+        Development by
+      </span>
+      <div
+        class="github-widget"
+        data-github="eduardobc88">
+      </div>
+      <span>
+        Version 1.0.0
+      </span>
+    </div>
+    <script src='/static/js/dashboard-login.js' charset="utf-8"></script>
+    <script src="/static/js/github-widget.js"></script>
+  </body>
+</html>
