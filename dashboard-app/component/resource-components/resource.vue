@@ -130,7 +130,7 @@ export default {
     generateFloatOptions () {
       this.floatOptions = [{
         icon: 'note_add',
-        name: 'New',
+        name: 'new',
         action: this.goToNew,
       }]
     },
@@ -199,7 +199,7 @@ export default {
       try {
         let data = await this.resource.save()
         if (data.getData().status_code == 1)
-          throw 'Error on save'
+          throw 'error on save'
         this.$router.replace({
           name: 'resource',
           params: {
@@ -218,7 +218,7 @@ export default {
       try {
         let data = await this.resource.delete()
         if (data.getData().status_code == 1)
-          throw 'Error on delete'
+          throw 'error on delete'
         this.$router.replace({
           name: 'resources',
           params: {

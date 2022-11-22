@@ -9,8 +9,8 @@
           <div class="section-wrapper">
             <VuePerfectScrollbar class="scroll-area">
               <div class="content">
-                <h2>Title</h2>
-                <p class="box-description">Description box</p>
+                <h2>the dashboard</h2>
+                <p class="box-description">here you can find all related to your modules</p>
               </div>
             </VuePerfectScrollbar>
           </div>
@@ -30,11 +30,21 @@ import LoadingBar from './templates/loading-bar.vue'
 import pieChart from './chart/pie-chart.vue'
 import Button from './templates/button.vue'
 
+const xmlContentReg = /\r\n|\n/
+
 export default {
   data() {
     return {
       dashboard: new this.$models.DashboardCollection(),
       isLoading: false,
+
+      // start - xml parser
+      file: null,
+      fileParsed: false,
+      fileName: '',
+      fileError: '',
+      fileMessage: 'Select a *.xml file',
+      // end - xml parser
     }
   },
   components: {
@@ -53,8 +63,42 @@ export default {
   },
   methods: {
     setup () {
-
     },
+    // start - xml parser
+    addFile () {
+      let files = this.$refs.file.files
+      if (files.length === 0) {
+        this.$refs.file.value = null
+        this.fileName = ''
+        this.fileError = 'XML file is not selected'
+        return
+      }
+      this.file = this.$refs.file
+      let file = files[0]
+      let fileType = file.type
+      this.fileName = file.name
+      if (file.name.includes('.xml')) {
+        let reader = new FileReader()
+        reader.onload = this.parseFileContent
+        reader.readAsText(file)
+        return
+      }
+      this.fileError = 'XML file format required'
+    },
+    parseFileContent (event) {
+      let contentLines = event.target.result
+      let parser = new DOMParser()
+      let xmlDoc = parser.parseFromString(contentLines, 'text/xml')
+      console.log(xmlDoc)
+      let transmitterTag = xmlDoc.getElementsByTagName('cfdi:Receptor')[0]
+      let dateTag = xmlDoc.getElementsByTagName('tfd:TimbreFiscalDigital')[0]
+      console.log('cfdi:Emisor: Nombre:', transmitterTag.getAttribute('Nombre'))
+      console.log('cfdi:Emisor: RFC:', transmitterTag.getAttribute('Rfc'))
+      console.log('cfdi:Emisor: FECHA TIMBRADO:', dateTag.getAttribute('FechaTimbrado'))
+      this.fileMessage = 'XML OK'
+      this.fileParsed = true
+    },
+    // end - xml parser
   },
 }
 </script>
@@ -69,17 +113,19 @@ h2 {
   color: var(--main-text-color);
   display: flex;
   flex-grow: 1;
-  font-size: var(--main-font-size);
+  font-size: var(--main-secundary-font-size);
   font-weight: bold;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .box-description {
-  font-size: var(--main-font-size);
-  font-weight: 500;
+  color: var(--main-text-color);
+  font-size: var(--main-secundary-font-size);
+  font-weight: 600;
   margin: 0;
   padding: 0;
-  color: var(--main-text-color);
+  text-transform: uppercase;
 }
 
 .content {

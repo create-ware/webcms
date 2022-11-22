@@ -361,7 +361,7 @@ h3 {
   font-size: var(--main-font-size);
   font-weight: 600;
   margin: 30px 0 10px 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 #content-wrapper h3:first-child {

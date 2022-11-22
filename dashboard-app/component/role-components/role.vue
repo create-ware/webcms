@@ -15,7 +15,7 @@
         <div id="doubleBoxWrapper">
           <div id="leftBox">
             <p class="sub-title">
-              {{ $t('Resources') }} - {{ resourceOptions.length }}
+              {{ $t('resources') }} - {{ resourceOptions.length }}
             </p>
             <VuePerfectScrollbar class="scroll-area">
               <div class="boxlist-wrapper">
@@ -33,7 +33,7 @@
           </div>
           <div id="rightBox">
             <p class="sub-title">
-              {{ $t('Current resources') }} - {{ role.get('role_resources').length }}
+              {{ $t('current resources') }} - {{ role.get('role_resources').length }}
             </p>
             <VuePerfectScrollbar class="scroll-area">
               <div class="boxlist-wrapper">
@@ -163,7 +163,7 @@ export default {
     generateFloatOptions () {
       this.floatOptions = [{
         icon: 'note_add',
-        name: 'New',
+        name: 'new',
         action: this.goToNew,
       }]
     },
@@ -381,7 +381,7 @@ export default {
       try {
         let data = await this.role.save()
         if (data.getData().status_code == 1)
-          throw 'Error on save'
+          throw 'error on save'
         this.$router.replace({
           name: 'role',
           params: {
@@ -411,7 +411,7 @@ export default {
       try {
         let data = await this.role.delete()
         if (data.getData().status_code == 1)
-          throw 'Error on save'
+          throw 'error on save'
         this.$router.replace({
           name: 'roles',
           params: {
@@ -451,7 +451,7 @@ h3 {
   font-size: var(--main-font-size);
   font-weight: 600;
   margin: 30px 0 15px 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .buttons-wrapper {
@@ -498,9 +498,10 @@ h3 {
   color: var(--main-text-color);
   display: flex;
   flex-grow: 1;
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   margin: 5px 0;
+  text-transform: uppercase;
 }
 
 .boxlist-wrapper {

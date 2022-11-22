@@ -64,6 +64,29 @@
         </div>
       </div>
       <div id="footer">
+        <div id="time">
+          <InputText
+            inputName="hour"
+            v-bind:inputValue="currentHour"
+            v-bind:onChangeValue="onChangeInputValue"
+            propName="hour"
+            inputType="number"        
+            v-bind:errorMessage="((currentHour < 0)?'error':'')"/>
+          <InputText
+            inputName="minute"
+            v-bind:inputValue="currentMinute"
+            v-bind:onChangeValue="onChangeInputValue"
+            propName="minute"
+            inputType="number"
+            v-bind:errorMessage="((currentMinute < 0)?'error':'')"/>
+          <InputText
+            inputName="second"
+            v-bind:inputValue="currentSecond"
+            v-bind:onChangeValue="onChangeInputValue"
+            propName="second"
+            inputType="number"
+            v-bind:errorMessage="((currentSecond < 0)?'error':'')"/>
+        </div>
         <Button
           buttonIcon="close"
           v-bind:buttonAction="onCancel"
@@ -84,6 +107,7 @@
 <script>
 import ButtonIcon from './button-icon.vue'
 import Button from './button.vue'
+import InputText from './input-text.vue'
 
 export default {
   props: [
@@ -97,6 +121,7 @@ export default {
   components: {
     ButtonIcon,
     Button,
+    InputText,
   },
   data () {
     return {
@@ -107,7 +132,7 @@ export default {
         'July', 'August', 'September',
         'October', 'November', 'December',
       ],
-      currentDate: moment(new Date()).format('YYYY-MM-DD'),
+      currentDate: moment(new Date()).format('YYYY-MM-DD hh:mm:ss'),
       activeDate: '',
       totalCurrentMonthDays: 0,
       countMonthDay: 0,
@@ -118,6 +143,9 @@ export default {
       selectedMonthNumberDay: -1,
       selectedMomentDate: '',
       isOpen: false,
+      currentHour: new Date().getHours(),
+      currentMinute: new Date().getMinutes(),
+      currentSecond: new Date().getSeconds(),
     }
   },
   watch: {
@@ -134,15 +162,40 @@ export default {
   methods: {
     setDefaults () {
       let momentDate = ''
-      if (this.date && this.date !== '0000-00-00')
-        momentDate = moment(this.date, 'YYYY-MM-DD')
+      if (this.date && this.date !== '0000-00-00 00:00:00')
+        momentDate = moment(this.date, 'YYYY-MM-DD hh:mm:ss')
       else
-        momentDate = moment(this.currentDate, 'YYYY-MM-DD')
+        momentDate = moment(this.currentDate, 'YYYY-MM-DD hh:mm:ss')
+      this.selectedMomentDate = momentDate
       this.activeDate = momentDate.format('YYYY-MM-DD')
       this.currentYear = parseInt(momentDate.format('YYYY'))
       this.currentMonth = parseInt(momentDate.format('MM'))
       this.currentDay = parseInt(momentDate.format('DD'))
+      this.currentHour = momentDate.format('hh')
+      this.currentMinute = momentDate.format('mm')
+      this.currentSecond = momentDate.format('ss')
       this.generateMonthDays()
+    },
+    onChangeInputValue (propName, value) {
+      let newVal = value
+      let val = parseInt(value)
+      if (propName === 'hour') {
+        if (val > 24)
+          newVal = 0
+        if (val < 0)
+          newVal = 24
+      } else {
+        if (parseInt(value) > 60)
+          newVal = 0
+        if (parseInt(value) < 0)
+          newVal = 60
+      }
+      if (propName === 'hour')
+        this.currentHour = newVal
+      else if (propName === 'minute')
+        this.currentMinute = newVal
+      else if (propName === 'second')
+        this.currentSecond = newVal
     },
     isActiveDate (monthDayNumber) {
       let date = `${ this.currentYear }-${ ('0' + this.currentMonth).slice(-2) }-${ ('0' + monthDayNumber).slice(-2) }`
@@ -221,7 +274,10 @@ export default {
     },
     onDone () {
       this.isOpen = false
-      this.doneAction(this.selectedMomentDate, this.data)
+      let date = `${ this.selectedMomentDate.format('YYYY') }-${ ('0' + this.selectedMomentDate.format('MM')).slice(-2) }-${ ('0' + this.selectedMomentDate.format('DD')).slice(-2) }`
+      let time = `${ this.currentHour }:${ ('0' + this.currentMinute).slice(-2) }:${ ('0' + this.currentSecond).slice(-2) }`
+      let dateTime = `${ date } ${ time }`
+      this.doneAction(dateTime, this.data)
     },
     toggleDatePicker () {
       if (this.isOpen) {
@@ -244,48 +300,49 @@ export default {
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  height: 40px;
+  margin-bottom: 10px;
   margin: 0;
+  max-width: 320px;
   padding-top: 15px;
   position: relative;
 }
 
 #input-title {
-  background-color: transparent;
+  background-color: var(--main-box-bg-color);
   color: var(--main-text-color);
   font-size: var(--main-font-size);
   font-weight: 600;
+  left: 6px;
+  padding: 0 4px;
   pointer-events: none;
   position: absolute;
-  top: 0;
+  text-transform: uppercase;
+  top: 6px;
   transition-duration: 50ms;
 }
 
 #input-wrapper input {
-  background: transparent;
-  border-bottom: 1px solid var(--main-text-color);
-  border-left: none;
-  border-right: none;
-  border-top: none;
+  background-color: transparent;
+  border-radius: 20px;
+  border: 1px solid var(--main-border-color);
   box-sizing: border-box;
   caret-color: var(--main-accent-color);
   color: var(--main-text-color);
-  font-size: var(--main-font-size);
-  font-weight: 500;
-  line-height: 1;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   margin: 0;
   outline: none;
-  padding: 3px 0;
+  padding: 6px 10px;
   width: 100%;
 }
 
 #input-error-message,
 #input-helper-message {
-  font-size: var(--main-font-size);
+  font-size: var(--main-secundary-font-size);
   font-weight: 500;
+  left: 10px;
   position: relative;
-  top: 0;
-  width: 100%;
+  text-transform: uppercase;
 }
 
 #input-error-message {
@@ -303,7 +360,7 @@ export default {
   box-shadow: var(--main-box-shadow);
   padding: 8px;
   position: absolute;
-  width: 213px;
+  width: 216px;
   z-index: 2;
 }
 
@@ -327,11 +384,13 @@ export default {
 
 #body {
   height: 200px;
+  margin-bottom: 80px;
 }
 
 #footer {
   justify-content: flex-end;
   margin: 0;
+  padding: 0 8px 8px 8px;
 }
 
 #days-labels {
@@ -347,6 +406,7 @@ export default {
   font-weight: bold;
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
 }
 
 .day-label {
@@ -408,5 +468,11 @@ export default {
 
 .current-month-day {
   background-color: red;
+}
+
+#time {
+  display: flex;
+  grid-gap: 8px;
+  margin-bottom: 8px;
 }
 </style>

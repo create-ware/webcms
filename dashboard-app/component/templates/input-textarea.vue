@@ -99,13 +99,16 @@ export default {
 }
 
 #input-title {
-  background-color: transparent;
+  background-color: var(--main-box-bg-color);
   color: var(--main-text-color);
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
+  left: 5px;
+  padding: 0 4px;
   pointer-events: none;
   position: absolute;
-  top: 17px;
+  text-transform: uppercase;
+  top: 4px;
   transition-duration: 50ms;
 }
 
@@ -115,10 +118,8 @@ export default {
 
 .input-wrapper textarea {
   background: transparent;
-  border-bottom: 1px solid var(--main-text-color);
-  border-left: none;
-  border-right: none;
-  border-top: none;
+  border-radius: 15px;
+  border: 1px solid var(--main-border-color);
   box-sizing: border-box;
   caret-color: var(--main-accent-color);
   color: var(--main-text-color);
@@ -129,32 +130,32 @@ export default {
   line-height: 1;
   margin: 0;
   outline: none;
-  padding: 3px 0;
+  padding: 6px 10px;
   width: 100%;
 }
 
 .input-wrapper.focus #input-title {
   color: var(--main-accent-color);
-  top: 0;
-  font-size: var(--main-font-size);
+  font-size: var(--main-secundary-font-size);
+  top: 6px;
 }
 
 .input-wrapper.focus textarea {
-  border-bottom: 1px solid var(--main-accent-color);
+  border: 1px solid var(--main-accent-color);
 }
 
 .input-wrapper.no-empty #input-title {
-  font-size: var(--main-font-size);
-  top: 0;
+  font-size: var(-main-secundary-font-size);
+  top: 6px;
 }
 
 #input-error-message,
 #input-helper-message {
-  font-size: var(--main-font-size);
+  font-size: var(--main-secundary-font-size);
   font-weight: 500;
+  left: 10px;
   position: relative;
-  top: 0;
-  width: 100%;
+  text-transform: uppercase;
 }
 
 #input-error-message {

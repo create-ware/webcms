@@ -71,19 +71,19 @@ export default {
 
 .title {
   color: var(--main-accent-color);
-  font-size: 16px;
-  font-weight: 500;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   letter-spacing: 0;
-  line-height: 32px;
+  text-transform: uppercase;
 }
 
 .box-content p {
   color: var(--main-text-color);
-  font-size: var(--main-font-size);
-  font-weight: 500;
+  font-size: var(--main-secundary-font-size);
+  font-weight: 600;
   letter-spacing: 0;
-  line-height: 20px;
   margin: 0px;
+  text-transform: uppercase;
 }
 
 .buttons-wrapper {
@@ -108,7 +108,7 @@ export default {
   padding: 6px 15px;
   position: relative;
   right: 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .buttons-wrapper .button:last-child {

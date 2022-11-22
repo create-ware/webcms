@@ -80,12 +80,13 @@ export default {
   color: var(--main-text-color);
   cursor: pointer;
   display: flex;
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   height: 16px;
   outline: none;
   padding: 6px 15px;
   position: relative;
+  text-transform: uppercase;
   user-select: none;
 }
 
@@ -163,7 +164,9 @@ export default {
 #select-options .item {
   background-color: var(--main-box-bg-color);
   padding: 6px 15px;
-  text-transform: capitalize;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: var(--main-secundary-font-size);
 }
 
 #select-options .item:hover {

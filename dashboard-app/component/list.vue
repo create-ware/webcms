@@ -32,11 +32,11 @@
     </BoxWrapper>
     <Footer>
       <div class="data">
-        {{ $t('Rows from') }} {{ totalSkippedItems + 1 }} {{ $t('to') }}
+        {{ $t('rows from') }} {{ totalSkippedItems + 1 }} {{ $t('to') }}
         {{ totalSkippedItems + items.models.length }} {{ $t('of') }} {{ totalItems }}
       </div>
       <div class="data">
-        {{ $t('Page') }} {{ currentPage }} {{ $t('of') }} {{ totalPages }}
+        {{ $t('page') }} {{ currentPage }} {{ $t('of') }} {{ totalPages }}
       </div>
       <ButtonIcon
         buttonIcon="first_page"
@@ -347,8 +347,9 @@ export default {
   align-self: center;
   color: var(--main-text-color);
   display: flex;
-  font-size: var(--main-font-size);
-  font-weight: 400;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   margin: 4px;
+  text-transform: uppercase;
 }
 </style>

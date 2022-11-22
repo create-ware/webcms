@@ -109,6 +109,7 @@ label {
 #select-wrapper #title {
   font-weight: 600;
   margin-right: 5px;
+  text-transform: uppercase;
 }
 #select-options .item {
   background-color: transparent;
@@ -117,7 +118,7 @@ label {
   padding: 8px 6px;
 }
 #select-options .item:first-letter {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 #select-options .item:hover {
   background-color: var(--main-hover-color);

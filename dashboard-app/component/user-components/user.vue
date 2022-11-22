@@ -173,7 +173,7 @@ export default {
     LoadingBar,
     FloatButtonOptions,
   },
-  created() {
+  created () {
     let routeParamId = this.$route.params.id
     this.generateFloatOptions()
     if (routeParamId !== undefined) {
@@ -192,7 +192,7 @@ export default {
     generateFloatOptions () {
       this.floatOptions = [{
         icon: 'note_add',
-        name: 'New',
+        name: 'new',
         action: this.goToNew,
       }]
     },
@@ -230,19 +230,19 @@ export default {
       }
     },
     onSelectOption (option, propName) {
-      if (option === null)
-        return
-
-      let id = option.get('id')
+      let id = 0
       let name = ''
       let propRef = `${ propName }_ref`
-      switch (propName) {
-        case 'role_id':
-          name = option.get('role_name')
-          break
-        case 'language_id':
-          name = option.get('language_name')
-          break
+      if (option !== null) {
+        id = option.get('id')
+        switch (propName) {
+          case 'role_id':
+            name = option.get('role_name')
+            break
+          case 'language_id':
+            name = option.get('language_name')
+            break
+        }
       }
       this.user.set(propName, id)
       this.user.set(propRef, name)
@@ -331,7 +331,7 @@ export default {
       try {
         let data = await this.user.save()
         if (data.getData().status_code == 1)
-          throw 'Error on save'
+          throw 'error on save'
         this.$router.replace({
           name: 'user',
           params: {
@@ -361,7 +361,7 @@ export default {
       try {
         await this.user.delete()
         if (data.getData().status_code == 1)
-          throw 'Error on delete'
+          throw 'error on delete'
         this.$router.replace({
           name: 'users',
           params: {

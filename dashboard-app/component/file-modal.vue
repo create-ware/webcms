@@ -12,13 +12,13 @@
             <Button
               buttonIcon="photo_library"
               v-bind:buttonAction="activeLibrary">
-              {{ $t('Library') }}
+              {{ $t('library') }}
             </Button>
             <Button
               buttonIcon="cloud_upload"
               v-bind:buttonAction="activeUpload"
               style="margin-left: 5px;">
-              {{ $t('Upload') }}
+              {{ $t('upload') }}
             </Button>
           </div>
         </div>
@@ -51,7 +51,7 @@
             <div id="dropzone" ref="dropzone">
               <div>
                 <p id="upload-description">
-                  {{ $t('Choose a file or drag it here') }}
+                  {{ $t('choose a file or drag it here') }}
                 </p>
                 <p id="upload-file-name">
                   {{ fileName }}
@@ -129,7 +129,7 @@ export default {
     'onFileSelect',
     'onlyImages',
   ],
-  data() {
+  data () {
     return {
       fileFiles: new this.$models.FileCollection(),
       filePage: 1,
@@ -285,22 +285,24 @@ export default {
 <style scoped lang="css">
 h2 {
   color: var(--main-accent-color);
-  font-size: 16px;
-  font-weight: 500;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   letter-spacing: 0;
   line-height: 1;
   margin: 0;
   padding: 0;
+  text-transform: uppercase;
 }
 
 #modal-description {
   color: var(--main-text-color);
-  font-size: var(--main-font-size);
-  font-weight: 500;
+  font-size: var(--main-secundary-font-size);
+  font-weight: 600;
   letter-spacing: 0;
   line-height: 20px;
   margin-bottom: 5px;
   margin-top: 0;
+  text-transform: uppercase;
 }
 
 #modal-box-wrapper {
@@ -433,7 +435,7 @@ h2 {
   color: white;
   font-size: 16px;
   font-weight: 400;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 #select-file-data-wrapper {
@@ -476,6 +478,7 @@ h2 {
 .description {
   font-size: 20px;
   margin: 10px;
+  text-transform: uppercase;
 }
 
 .file-name {

@@ -12,7 +12,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the resources',
+      status_msg: 'error loading the resources',
     })
     return res
   }
@@ -25,7 +25,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the resources',
+      status_msg: 'error loading the resources',
     })
     return res
   }
@@ -56,7 +56,7 @@ exports.fetchAll = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the resources',
+      status_msg: 'error loading the resources',
     })
     return res
   }
@@ -82,7 +82,7 @@ exports.search = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the resources',
+      status_msg: 'error loading the resources',
     })
     return res
   }
@@ -134,7 +134,7 @@ exports.get = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the resource',
+      status_msg: 'error loading the resource',
     })
     return res
   }

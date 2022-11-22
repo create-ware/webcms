@@ -100,19 +100,19 @@ export default {
 
 #modal-title {
   color: var(--main-accent-color);
-  font-size: 16px;
-  font-weight: 500;
+  font-size: var(--main-accent-font-size);
+  font-weight: bold;
   letter-spacing: 0;
-  line-height: 32px;
+  text-transform: uppercase;
 }
 
 #modal-description {
   color: var(--main-text-color);
-  font-size: var(--main-font-size);
-  font-weight: 500;
+  font-size: var(--main-secundary-font-size);
+  font-weight: 600;
   letter-spacing: 0;
-  line-height: 20px;
   margin: 0px;
+  text-transform: uppercase;
 }
 
 #modal-buttons-wrapper {
@@ -137,7 +137,7 @@ export default {
   padding: 7px;
   position: relative;
   right: 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 #modal-buttons-wrapper .button:last-child {

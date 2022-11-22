@@ -317,7 +317,7 @@ button {
   outline: none;
   padding: 7px;
   position: relative;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 button:hover {

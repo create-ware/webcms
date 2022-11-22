@@ -406,7 +406,7 @@ tfoot tr td {
   color: var(--main-letter-color);
   font-size: 14px;
   font-weight: 400;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .item-text {

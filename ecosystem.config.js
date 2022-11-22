@@ -20,9 +20,6 @@ module.exports = {
       'proxy',
       'server-app/migrations',
       '.git'
-    ],
-    watch_options: {
-      followSymlinks: false
-    }
+    ]
   }]
 }

@@ -90,7 +90,7 @@ exports.get = async (data, userPass = false) => {
     // await query.getRef(res, 'language', 'language_name', 'language_id_ref', res.role_id)
     return res
   } catch (err) {
-    console.log(err)
+    console.error(err)
     return {
       error: err
     }

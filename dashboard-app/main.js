@@ -51,6 +51,7 @@ import FeedbackCollection from './model/feedback-collection.vue'
 import LanguageModel from './model/language-model.vue'
 import LanguageCollection from './model/language-collection.vue'
 
+
 // NOTE: components
 import App from './app.vue'
 import Dashboard from './component/dashboard.vue'
@@ -64,7 +65,6 @@ import Feedback from './component/feedback.vue'
 import Profile from './component/profile.vue'
 import Resource from './component/resource-components/resource.vue'
 import Language from './component/language-components/language.vue'
-
 
 
 for (let directive of GLOBAL_DIRECTIVES.directives)

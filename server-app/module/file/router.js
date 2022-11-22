@@ -8,7 +8,7 @@ let routes = [
     url: '/files/:page/',
     preHandler: session.isAuthenticated,
     handler: controller.fetch,
-    config: { resource_name: 'files', },
+    config: { resource_name: 'file', },
   },
   {
     method: 'GET',
@@ -18,7 +18,7 @@ let routes = [
       s: { type: 'string' }
     },
     handler: controller.search,
-    config: { resource_name: 'files', },
+    config: { resource_name: 'file', },
   },
   {
     method: 'GET',

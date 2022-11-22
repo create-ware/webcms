@@ -23,6 +23,13 @@
       class="material-icons-round icon">
       {{ buttonIcon }}
     </i>
+    <div
+      v-if="chipText"
+      id="chip">
+      <i>
+        {{ chipText }}
+      </i>
+    </div>
   </div>
 </template>
 
@@ -39,6 +46,7 @@ export default {
     'btnBkgActiveColor',
     'btnColor',
     'btnActiveColor',
+    'chipText',
   ],
   data () {
     return {
@@ -81,11 +89,12 @@ export default {
   color: var(--btn-color);
   cursor: pointer;
   display: flex;
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   outline: none;
   padding: 6px 15px;
   position: relative;
+  text-transform: uppercase;
   user-select: none;
   word-break: keep-all;
 
@@ -114,4 +123,27 @@ export default {
 #button-wrapper.readonly {
   opacity: 0.5;
 }
+
+#chip {
+  background-color: var(--main-active-color);
+  border-radius: 2px;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  left: 0;
+  margin: auto auto auto 8px;
+  padding: 0 2px;
+  position: relative;
+  right: 0;
+  top: 0;
+}
+
+#chip i {
+  color: var(--main-accent-color);
+  font-size: var(--main-accent-font-size);
+  font-style: normal;
+  font-weight: bold;
+  margin: auto;
+}
+
 </style>

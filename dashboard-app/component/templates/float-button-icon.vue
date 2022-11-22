@@ -57,8 +57,8 @@ export default {
   color: var(--main-text-color);
   cursor: pointer;
   display: flex;
-  font-size: var(--main-font-size);
-  font-weight: 400;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   margin-left: auto;
   outline: none;
   overflow: hidden;
@@ -84,6 +84,7 @@ export default {
   justify-self: center;
   padding: 6px 10px;
   position: relative;
+  text-transform: uppercase;
 }
 
 #button-wrapper:hover #button {

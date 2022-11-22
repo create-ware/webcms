@@ -24,7 +24,7 @@ services:
     command: [nginx-debug, '-g', 'daemon off;']
     tty: true
   webcms-app-service:
-    image: node:lts
+    image: webcms-node-img:latest
     restart: "no"
     hostname: webcms-app-service
     container_name: webcms-app-service
@@ -35,14 +35,23 @@ services:
     working_dir: /webcms/
     env_file:
       - webcms-environment-vars.env
-    command: npm run server-production
+    command: pm2-runtime start ecosystem.config.js --env production
     depends_on:
       - webcms-mariadb-service
     tty: true
+  webcms-dashboard-app:
+    image: webcms-node-img:latest
+    restart: always
+    container_name: webcms-dashboard-app
+    volumes:
+      - ../../:/webcms/
+    working_dir: /webcms/
+    command: npm run dashboard-production
+    tty: true
   webcms-mariadb-service:
     image: mariadb
+    restart: always
     hostname: webcms-mariadb-service
-    restart: "no"
     container_name: webcms-mariadb-service
     networks:
       - webcms-work-network

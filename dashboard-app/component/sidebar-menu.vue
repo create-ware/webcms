@@ -71,7 +71,7 @@ export default {
       menuItems: [
         {
           position: 0,
-          title: 'Dashboard',
+          title: 'dashboard',
           name: 'dashboard',
           icon: 'dashboard',
           resourceName: 'dashboard',
@@ -80,7 +80,7 @@ export default {
         },
         {
           position: 3,
-          title: 'Files',
+          title: 'files',
           name: 'files',
           icon: 'perm_media',
           params: { page: 1 },
@@ -89,7 +89,7 @@ export default {
           expanded: false,
           children: [
             {
-              title: 'New',
+              title: 'new',
               name: 'file',
               icon: 'add',
               uuid: this.$uuid.v1(),
@@ -98,7 +98,7 @@ export default {
         },
         {
           position: 4,
-          title: 'Users',
+          title: 'users',
           name: 'users',
           icon: 'people',
           params: { page: 1 },
@@ -107,7 +107,7 @@ export default {
           expanded: false,
           children: [
             {
-              title: 'New',
+              title: 'new',
               name: 'user',
               icon: 'add',
               uuid: this.$uuid.v1(),
@@ -116,7 +116,7 @@ export default {
         },
         {
           position: 5,
-          title: 'Resources',
+          title: 'resources',
           name: 'resources',
           icon: 'pages',
           params: { page: 1 },
@@ -125,7 +125,7 @@ export default {
           expanded: false,
           children: [
             {
-              title: 'New',
+              title: 'new',
               name: 'resource',
               icon: 'add',
               uuid: this.$uuid.v1(),
@@ -134,7 +134,7 @@ export default {
         },
         {
           position: 6,
-          title: 'Roles',
+          title: 'roles',
           name: 'roles',
           icon: 'security',
           params: { page: 1 },
@@ -143,7 +143,7 @@ export default {
           expanded: false,
           children: [
             {
-              title: 'New',
+              title: 'new',
               name: 'role',
               icon: 'add',
               uuid: this.$uuid.v1(),
@@ -152,7 +152,7 @@ export default {
         },
         {
           position: 9,
-          title: 'Categories',
+          title: 'categories',
           name: 'categories',
           icon: 'category',
           params: { page: 1 },
@@ -161,7 +161,7 @@ export default {
           expanded: false,
           children: [
             {
-              title: 'New',
+              title: 'new',
               name: 'category',
               icon: 'add',
               uuid: this.$uuid.v1(),
@@ -170,7 +170,7 @@ export default {
         },
         {
           position: 15,
-          title: 'Feedbacks',
+          title: 'feedbacks',
           name: 'feedbacks',
           icon: 'feedback',
           params: { page: 1 },
@@ -179,7 +179,7 @@ export default {
         },
         {
           position: 16,
-          title: 'Languages',
+          title: 'languages',
           name: 'languages',
           icon: 'language',
           params: { page: 1 },
@@ -188,7 +188,7 @@ export default {
           expanded: false,
           children: [
             {
-              title: 'New',
+              title: 'new',
               name: 'language',
               icon: 'add',
               uuid: this.$uuid.v1(),
@@ -197,7 +197,7 @@ export default {
         },
         {
           position: 7,
-          title: 'Profile',
+          title: 'profile',
           name: 'profile',
           icon: 'person',
           resourceName: '',
@@ -206,12 +206,66 @@ export default {
         },
         {
           position: 8,
-          title: 'Settings',
+          title: 'settings',
           name: 'settings',
           icon: 'settings',
           resourceName: 'settings',
           keys: 'settings',
           expanded: false,
+        },
+        {
+          position: 17,
+          title: 'areas',
+          name: 'areas',
+          icon: 'workspaces',
+          params: { page: 1 },
+          resourceName: 'areas',
+          keys: 'areas, area',
+          expanded: false,
+          children: [
+            {
+              title: 'new',
+              name: 'area',
+              icon: 'note_add',
+              uuid: this.$uuid.v1(),
+            },
+          ],
+        },
+        {
+          position: 18,
+          title: 'sections',
+          name: 'sections',
+          icon: 'straighten',
+          params: { page: 1 },
+          resourceName: 'sections',
+          keys: 'sections, section',
+          expanded: false,
+          children: [
+            {
+              title: 'new',
+              name: 'section',
+              icon: 'note_add',
+              uuid: this.$uuid.v1(),
+            },
+          ],
+        },
+        {
+          position: 19,
+          title: 'documents',
+          name: 'documents',
+          icon: 'description',
+          params: { page: 1 },
+          resourceName: 'documents',
+          keys: 'documents, document',
+          expanded: false,
+          children: [
+            {
+              title: 'new',
+              name: 'document',
+              icon: 'note_add',
+              uuid: this.$uuid.v1(),
+            },
+          ],
         },
       ],
     }
@@ -320,14 +374,15 @@ export default {
   display: flex;
   flex-direction: row;
   flex-shrink: 0;
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   height: 30px;
   margin: 2px;
   max-width: 100%;
   padding: 0 8px;
   position: relative;
   text-decoration: none;
+  text-transform: uppercase;
   user-select: none;
   z-index: 2;
 }
@@ -372,14 +427,15 @@ export default {
   display: flex;
   flex-direction: row;
   flex-shrink: 0;
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: calc(var(--main-accent-font-size) - 3px);
+  font-weight: bold;
   height: 30px;
   margin: 0 2px;
   max-width: 100%;
   padding: 0 8px;
   position: relative;
   text-decoration: none;
+  text-transform: uppercase;
   user-select: none;
   z-index: 2;
 }

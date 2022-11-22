@@ -11,7 +11,7 @@ exports.search = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error searching',
+      status_msg: 'error searching',
     })
     return res
   }

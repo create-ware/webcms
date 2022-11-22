@@ -29,6 +29,8 @@ class UserModel extends BaseModel {
       updated_at: '',
       profile_file_id: 0,
       user_status: 'offline',
+
+      area_id: 0,
     }
   }
   mutations() {
@@ -39,6 +41,8 @@ class UserModel extends BaseModel {
       user_email: String,
       user_first_name: String,
       profile_file_id: Number,
+
+      area_id: Number,
     }
   }
   validation() {

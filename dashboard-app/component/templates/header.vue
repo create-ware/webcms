@@ -69,10 +69,11 @@ h2 {
   align-self: center;
   color: var(--main-accent-color);
   font-size: calc(var(--main-font-size) + 4px);
-  font-weight: 600;
+  font-weight: bold;
   letter-spacing: normal;
   margin: 0 4px;
   padding: 0;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 

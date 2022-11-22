@@ -8,14 +8,14 @@ let routes = [
     url: '/roles/all/',
     preHandler: session.isAuthenticated,
     handler: controller.fetchAll,
-    config: { resource_name: 'roles', },
+    config: { resource_name: 'role', },
   },
   {
     method: 'GET',
     url: '/roles/:page/',
     preHandler: session.isAuthenticated,
     handler: controller.fetch,
-    config: { resource_name: 'roles', },
+    config: { resource_name: 'role', },
   },
   {
     method: 'GET',
@@ -25,7 +25,7 @@ let routes = [
       s: { type: 'string' }
     },
     handler: controller.search,
-    config: { resource_name: 'roles', },
+    config: { resource_name: 'role', },
   },
   {
     method: 'GET',

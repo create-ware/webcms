@@ -84,7 +84,7 @@
                     <span
                       v-if="item.get('item_icon') !== 'list'"
                       class="chip new">
-                      {{ $t('New') }}
+                      {{ $t('new') }}
                     </span>
                     <span
                       v-if="item.get('item_icon') === 'list'"
@@ -449,7 +449,7 @@ export default {
   position: relative;
   text-align: right;
   text-overflow: ellipsis;
-  text-transform: capitalize;
+  text-transform: uppercase;
   white-space: nowrap;
   z-index: 1;
 }
@@ -470,7 +470,7 @@ export default {
   align-self: center;
   font-size: 16px;
   font-weight: 400;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .username .menu {
@@ -498,11 +498,12 @@ export default {
   border-radius: 20px;
   color: var(--main-text-color);
   display: flex;
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   max-width: 100%;
   padding: 6px 15px;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .username .menu .option:hover {
@@ -555,6 +556,7 @@ export default {
 
 #search-wrapper input::-webkit-input-placeholder {
   color: var(--main-text-color);
+  text-transform: uppercase;
 }
 
 #search-wrapper .bkg {
@@ -653,8 +655,8 @@ export default {
 }
 
 #user-first-name {
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   margin: 0px;
 }
 
