@@ -59,7 +59,7 @@ exports.update = async data => {
         data.id,
       ])
     if (res.affectedRows === 0)
-      throw 'Error updating record'
+      throw 'error updating record'
     // NOTE: update language messages
     for (let i of data.language_messages) {
       if (i.id) {
@@ -146,7 +146,7 @@ exports.delete = async data => {
         data.id,
       ])
     if (res.affectedRows === 0)
-      throw 'Error deleting record'
+      throw 'error deleting record'
     // NOTE: update language messages
     await transaction.query(`
       UPDATE

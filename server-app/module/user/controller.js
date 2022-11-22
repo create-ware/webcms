@@ -15,7 +15,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the users',
+      status_msg: 'error loading the users',
     })
     return res
   }
@@ -29,7 +29,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the users',
+      status_msg: 'error loading the users',
     })
     return res
   }
@@ -57,7 +57,7 @@ exports.search = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the users',
+      status_msg: 'error loading the users',
     })
     return res
   }
@@ -119,7 +119,7 @@ exports.get = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the user',
+      status_msg: 'error loading the user',
     })
     return res
   }

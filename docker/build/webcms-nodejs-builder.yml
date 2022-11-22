@@ -1,7 +1,7 @@
 version: '2'
 services:
   webcms-base:
-    image: node:lts
+    image: webcms-node-img:latest
     volumes:
       - ../../:/webcms/
     working_dir: /webcms/
@@ -9,7 +9,9 @@ services:
     extends:
       service: webcms-base
     command: >
-      bash -c "npm i;
+      sh -c "
+       yarn --version;
+       yarn install;
         "
   webcms-finish:
     extends:

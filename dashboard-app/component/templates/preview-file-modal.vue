@@ -150,7 +150,7 @@ export default {
   padding: 7px;
   position: relative;
   right: 0;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 .buttons-wrapper .button:last-child {

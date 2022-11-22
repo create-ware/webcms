@@ -84,11 +84,12 @@ export default {
 #input-wrapper label {
   align-self: center;
   color: var(--main-text-color);
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   margin-left: 8px;
   pointer-events: none;
   position: relative;
+  text-transform: uppercase;
 }
 
 #input-wrapper.embeded {
@@ -96,8 +97,7 @@ export default {
 }
 
 #input-wrapper.embeded label {
-  font-size: var(--main-accent-font-size);
-  font-weight: 500;
+  font-size: var(--main-secundary-font-size);
 }
 
 #input-wrapper:active label {
@@ -105,7 +105,7 @@ export default {
 }
 
 #input-wrapper label:first-letter {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 #input-wrapper input {

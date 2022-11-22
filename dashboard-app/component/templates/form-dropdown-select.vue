@@ -193,12 +193,13 @@ export default {
 #input-title {
   background-color: var(--main-box-bg-color);
   color: var(--main-text-color);
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   left: 6px;
   padding: 0 4px;
   pointer-events: none;
   position: absolute;
+  text-transform: uppercase;
   top: -10px;
   transition-duration: 50ms;
 }
@@ -239,12 +240,13 @@ input {
   border-radius: 20px;
   color: var(--main-text-color);
   cursor: pointer;
-  font-size: var(--main-font-size);
-  font-weight: 500;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
+  margin: 0px 10px;
   overflow: hidden;
   padding: 6px 10px;
   text-overflow: ellipsis;
-  margin: 0px 10px;
+  text-transform: uppercase;
 }
 
 #select-options .scroll-area .item:first-child {
@@ -256,7 +258,7 @@ input {
 }
 
 #select-options .item:first-letter {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 #select-options .item:hover {

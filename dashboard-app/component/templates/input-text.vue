@@ -101,12 +101,13 @@ export default {
 #input-title {
   background-color: var(--main-box-bg-color);
   color: var(--main-text-color);
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   left: 6px;
   padding: 0 4px;
   pointer-events: none;
   position: absolute;
+  text-transform: uppercase;
   top: 22px;
   transition-duration: 50ms;
 }
@@ -138,7 +139,7 @@ export default {
 
 .input-wrapper.no-empty #input-title {
   font-size: var(-main-secundary-font-size);
-  top: 4px;
+  top: 6px;
 }
 
 #input-error-message,
@@ -148,6 +149,7 @@ export default {
   font-weight: 500;
   left: 10px;
   position: relative;
+  text-transform: uppercase;
 }
 
 #input-error-message {

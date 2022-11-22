@@ -207,18 +207,20 @@ h2 {
 .item .title {
   color: var(--main-text-color);
   font-size: var(--main-secundary-font-size);
-  font-weight: 600;
+  font-weight: bold;
   margin: 0;
   overflow: hidden;
+  text-transform: uppercase;
 }
 
 .item .date {
   color: var(--main-text-color);
   font-size: var(--main-secundary-font-size);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 14px;
   margin: 0;
   overflow: hidden;
+  text-transform: uppercase;
 }
 
 .shadow {

@@ -165,6 +165,6 @@ h2 {
   font-style: normal;
   font-weight: 400;
   margin: auto;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 </style>

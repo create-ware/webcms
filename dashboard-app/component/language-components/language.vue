@@ -6,14 +6,14 @@
       <div class="content-wrapper">
         <InputText
           class="input"
-          inputName="Name"
+          inputName="name"
           v-bind:inputValue="language.get('language_name')"
           v-bind:onChangeValue="onChangeInputValue"
           propName="language_name"
           v-bind:errorMessage="language.errors.language_name"
           helperMessage="At least 2 characters without spaces"/>
         <CustomFields
-          title="Messages"
+          title="messages"
           v-bind:items="language.get('language_messages')"
           v-bind:onChangeCustomField="onChangeCustomField"
           v-bind:onAddCustomField="onAddCustomField"
@@ -109,7 +109,7 @@ export default {
     generateFloatOptions () {
       this.floatOptions = [{
         icon: 'note_add',
-        name: 'New',
+        name: 'new',
         action: this.goToNew,
       }]
     },
@@ -199,7 +199,7 @@ export default {
       try {
         let data = await this.language.save()
         if (data.getData().status_code == 1)
-          throw 'Error on save'
+          throw 'error on save'
         this.$router.replace({
           name: 'language',
           params: {
@@ -229,7 +229,7 @@ export default {
       try {
         let data = await this.language.delete()
         if (data.getData().status_code == 1)
-          throw 'Error on save'
+          throw 'error on save'
         this.$router.replace({
           name: 'languages',
           params: {

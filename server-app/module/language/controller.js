@@ -12,7 +12,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the languages',
+      status_msg: 'error loading the languages',
     })
     return res
   }
@@ -25,7 +25,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the languages',
+      status_msg: 'error loading the languages',
     })
     return res
   }
@@ -48,7 +48,7 @@ exports.fetchAll = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the languages',
+      status_msg: 'error loading the languages',
     })
     return res
   }
@@ -61,7 +61,7 @@ exports.fetchAll = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the languages',
+      status_msg: 'error loading the languages',
     })
     return res
   }
@@ -87,7 +87,7 @@ exports.search = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error searching the languages',
+      status_msg: 'error searching the languages',
     })
     return res
   }
@@ -108,7 +108,7 @@ exports.save = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error saving the language',
+      status_msg: 'error saving the language',
     })
     return res
   }
@@ -120,14 +120,14 @@ exports.save = async (req, res) => {
     notification: {
       user_id: req.session.user.id,
       notification_type: 'log',
-      notification_title: 'New language added',
+      notification_title: 'newlanguage added',
       notification_description: '',
     },
   })
   await res.send({
     data: rec,
     status_code: 0,
-    status_msg: 'New language added',
+    status_msg: 'newlanguage added',
   })
   return res
 }
@@ -138,7 +138,7 @@ exports.update = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error updating the language',
+      status_msg: 'error updating the language',
     })
     return res
   }
@@ -168,7 +168,7 @@ exports.delete = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error deleting the language',
+      status_msg: 'error deleting the language',
     })
     return res
   }
@@ -198,7 +198,7 @@ exports.get = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the language',
+      status_msg: 'error loading the language',
     })
     return res
   }

@@ -15,7 +15,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the roles',
+      status_msg: 'error loading the roles',
     })
     return res
   }
@@ -29,7 +29,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the roles'
+      status_msg: 'error loading the roles'
     })
     return res
   }
@@ -55,7 +55,7 @@ exports.fetchAll = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the roles'
+      status_msg: 'error loading the roles'
     })
     return res
   }
@@ -69,7 +69,7 @@ exports.fetchAll = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the roles'
+      status_msg: 'error loading the roles'
     })
     return res
   }
@@ -97,7 +97,7 @@ exports.search = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error searching the roles'
+      status_msg: 'error searching the roles'
     })
     return res
   }
@@ -120,7 +120,7 @@ exports.save = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error saving the role',
+      status_msg: 'error saving the role',
     })
     return res
   }
@@ -132,14 +132,14 @@ exports.save = async (req, res) => {
     notification: {
       user_id: sessionUserId,
       notification_type: 'log',
-      notification_title: 'New role added',
+      notification_title: 'newrole added',
       notification_description: '',
     },
   })
   await res.send({
     data: rec,
     status_code: 0,
-    status_msg: 'New role added',
+    status_msg: 'newrole added',
   })
   return res
 }
@@ -152,7 +152,7 @@ exports.update = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error updating the role',
+      status_msg: 'error updating the role',
     })
     return res
   }
@@ -194,7 +194,7 @@ exports.delete = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error deleting the role',
+      status_msg: 'error deleting the role',
     })
     return res
   }
@@ -228,7 +228,7 @@ exports.get = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the role',
+      status_msg: 'error loading the role',
     })
     return res
   }

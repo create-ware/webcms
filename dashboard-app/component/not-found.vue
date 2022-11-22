@@ -50,7 +50,7 @@ h3 {
   font-weight: 600;
   margin-top: 7px;
   text-align: center;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 </style>

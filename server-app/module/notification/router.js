@@ -8,7 +8,7 @@ let routes = [
     url: '/notifications/:page/',
     preHandler: session.isAuthenticated,
     handler: controller.fetch,
-    config: { resource_name: 'notifications', },
+    config: { resource_name: 'notification', },
   },
   {
     method: 'GET',

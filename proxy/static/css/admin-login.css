@@ -154,7 +154,7 @@ h2 {
   outline: none;
   padding: 7px 20px;
   position: relative;
-  text-transform: capitalize;
+  text-transform: uppercase;
   user-select: none;
 }
 
@@ -363,7 +363,7 @@ input[type="radio"]:focus {
   font-weight: 600;
   margin-left: 10px;
   pointer-events: none;
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 

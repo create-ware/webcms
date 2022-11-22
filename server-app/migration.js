@@ -21,6 +21,7 @@ const conn = mysql.createPool({
   database        : APP_CONFIG.mariaDB.db_name,
   debug           : false,
 })
+
 migration.init(conn, __dirname + '/migrations', () => {
   console.log('== webcms - migration : finished running migrations ==')
 })

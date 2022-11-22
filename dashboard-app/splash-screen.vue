@@ -62,7 +62,7 @@ export default {
   display: flex;
   align-self: center;
   margin: auto;
-  height: 80px;
+  height: 60px;
   filter: grayscale(100%);
 }
 

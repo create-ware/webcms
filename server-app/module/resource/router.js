@@ -8,14 +8,14 @@ let routes = [
     url: '/resources/all/',
     preHandler: session.isAuthenticated,
     handler: controller.fetchAll,
-    config: { resource_name: 'resources', },
+    config: { resource_name: 'resource', },
   },
   {
     method: 'GET',
     url: '/resources/:page/',
     preHandler: session.isAuthenticated,
     handler: controller.fetch,
-    config: { resource_name: 'resources', },
+    config: { resource_name: 'resource', },
   },
   {
     method: 'GET',
@@ -25,7 +25,7 @@ let routes = [
       s: { type: 'string' }
     },
     handler: controller.search,
-    config: { resource_name: 'resources', },
+    config: { resource_name: 'resource', },
   },
   {
     method: 'GET',

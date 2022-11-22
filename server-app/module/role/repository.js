@@ -66,7 +66,7 @@ exports.update = async data => {
         data.user_id,
       ])
     if (res.affectedRows === 0)
-      throw 'Error updating record'
+      throw 'error updating record'
     // NOTE: update role resources
     for (let i of data.role_resources) {
       if (i.id !== undefined && i.id > 0) {
@@ -161,7 +161,7 @@ exports.delete = async data => {
         data.user_id,
       ])
     if (res.affectedRows === 0)
-      throw 'Error deleting record'
+      throw 'error deleting record'
     // NOTE: update role resources
     await transaction.query(`
       UPDATE

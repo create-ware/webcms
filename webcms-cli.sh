@@ -4,7 +4,7 @@ webcms_help()
   echo "";
   echo "Management options:";
   echo "";
-  echo "--build                   Create images, containers and build dependencies";
+  echo "--build                        Create images, containers and build dependencies";
   echo "--start-development            Create containers and start services";
   echo "--build-production             Build production";
   echo "--start-production             Create containers and start services";
@@ -25,9 +25,11 @@ webcms_build()
   echo "Build";
   base_dir=./docker/;
   mkdir -p ${base_dir}../database/mysql/;
+  echo "Build: webcms-node-img";
+  docker build -f ${base_dir}/dockerfile/dockerfile-node -t webcms-node-img .;
   docker-compose -f ${base_dir}build/webcms-nodejs-builder.yml run --rm webcms-install;
   echo "Build finished";
-  echo "For next steps run: webcms.sh after-deploying"
+  echo "For next steps run: webcms.sh after-deploying";
 }
 
 webcms_start_development()
@@ -76,7 +78,7 @@ webcms_stop_production()
 {
   echo "Stopping production";
   echo "";
-  docker stack rm webcms-production
+  docker stack rm webcms-production;
   webcms_remove_networks;
   echo "";
   echo "Stopping production finished";

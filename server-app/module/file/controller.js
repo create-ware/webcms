@@ -18,7 +18,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the files 1',
+      status_msg: 'error loading the files 1',
     })
     return res
   }
@@ -32,7 +32,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the files',
+      status_msg: 'error loading the files',
     })
     return res
   }
@@ -60,7 +60,7 @@ exports.search = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the files',
+      status_msg: 'error loading the files',
     })
     return res
   }
@@ -85,7 +85,7 @@ exports.get = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the file',
+      status_msg: 'error loading the file',
     })
     return res
   }
@@ -104,7 +104,7 @@ exports.store = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error uploading file',
+      status_msg: 'error uploading file',
     })
     return res
   }
@@ -132,14 +132,14 @@ exports.store = async (req, res) => {
     notification: {
       user_id: sessionUserId,
       notification_type: 'log',
-      notification_title: 'New file added',
+      notification_title: 'newfile added',
       notification_description: '',
     },
   })
   await res.send({
     data: rec,
     status_code: 0,
-    status_msg: 'New file added',
+    status_msg: 'newfile added',
   })
   return res
 }

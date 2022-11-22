@@ -14,7 +14,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the notifications',
+      status_msg: 'error loading the notifications',
     })
     return res
   }
@@ -28,7 +28,7 @@ exports.fetch = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the notifications',
+      status_msg: 'error loading the notifications',
     })
     return res
   }
@@ -52,7 +52,7 @@ exports.get = async (req, res) => {
     res.code(500)
     await res.send({
       status_code: 1,
-      status_msg: 'Error loading the notification',
+      status_msg: 'error loading the notification',
     })
     return res
   }

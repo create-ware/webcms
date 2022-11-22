@@ -41,7 +41,7 @@ export default {
   color: var(--main-text-color);
   cursor: pointer;
   display: flex;
-  font-weight: 600;
+  font-weight: bold;
   height: 24px;
   justify-content: center;
   outline: none;

@@ -102,4 +102,8 @@ module.exports = {
       defaultAttribute: 'defer'
     }),
   ],
+  watchOptions: {
+    stdin: true, // for windows
+    poll: 1000
+  },
 };

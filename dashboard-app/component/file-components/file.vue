@@ -154,7 +154,7 @@ export default {
     generateFloatOptions () {
       this.floatOptions = [{
         icon: 'note_add',
-        name: 'New',
+        name: 'new',
         action: this.goToNew,
       }]
     },

@@ -43,6 +43,7 @@ const languageRouter = require('./module/language/router')
 const searchRouter = require('./module/search/router')
 const notificationRouter = require('./module/notification/router')
 
+
 // create static directory for uploads
 directory.createFolderFromPath(APP_CONFIG.uploadDirectory)
 // create static directory for upload image sizes

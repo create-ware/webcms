@@ -82,8 +82,8 @@ export default {
   color: var(--main-text-color);
   cursor: pointer;
   display: flex;
-  font-size: var(--main-accent-font-size);
-  font-weight: 400;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   height: 40px;
   margin-left: auto;
   outline: none;
@@ -106,13 +106,14 @@ export default {
 
 #button {
   border-radius: 100%;
+  display: flex;
   height: 100%;
   left: 0;
   margin: auto;
   position: relative;
+  text-transform: uppercase;
   top: 0;
   width: 100%;
-  display: flex;
 }
 
 #button-wrapper:hover #button {
@@ -152,13 +153,14 @@ export default {
   color: var(--main-text-color);
   cursor: pointer;
   display: flex;
-  font-size: var(--main-accent-font-size);
-  font-weight: 400;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   margin: 10px 0;
   outline: none;
   overflow: hidden;
   padding: 6px 10px;
   position: relative;
+  text-transform: uppercase;
   transition-duration: 200ms;
   transition-property: background-color;
   user-select: none;

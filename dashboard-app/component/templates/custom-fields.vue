@@ -122,9 +122,10 @@ export default {
 #title {
   background-color: transparent;
   color: var(--main-text-color);
-  font-size: var(--main-font-size);
-  font-weight: 600;
+  font-size: var(--main-secundary-font-size);
+  font-weight: bold;
   pointer-events: none;
+  text-transform: uppercase;
 }
 
 #overflow {

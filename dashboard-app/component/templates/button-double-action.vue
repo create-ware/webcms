@@ -69,6 +69,7 @@ export default {
   outline: none;
   padding: 6px 15px;
   position: relative;
+  text-transform: uppercase;
   user-select: none;
 }
 
